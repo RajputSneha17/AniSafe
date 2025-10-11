@@ -36,13 +36,13 @@ const ProfileSection = () => {
           transition={{ delay: 0.6, duration: 1 }}
         >
           <Link
-            to="/signup"
+            to="/register"
             className="bg-yellow-400 text-black px-6 py-3 cursor-pointer rounded-full font-semibold hover:bg-yellow-500 transition"
           >
             Sign Up
           </Link>
           <Link
-            to="/login"
+            to="/register"
             className="bg-gray-900 text-white px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-800 transition"
           >
             Login

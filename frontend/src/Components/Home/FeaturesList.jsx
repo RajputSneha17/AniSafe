@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const FeaturesList = () => {
   // SVG Icon Components
   const MapPin = ({ size = 24, className = "" }) => (
@@ -35,12 +37,13 @@ const FeaturesList = () => {
     </svg>
   );
 
-const trendingFeatures = [
-  { name: "Community", place: "Connect & Educate", rating: 4.8, reviews: 128, link: "https://images.unsplash.com/photo-1557856414-069ce8796ec9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-  { name: "Adopt", place: "Find Loving Homes", rating: 4.7, reviews: 96, link: "https://images.unsplash.com/photo-1700406904426-b4e4ac5f0bb0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-  { name: "Map", place: "Locate Rescue Zones", rating: 4.9, reviews: 215, link: "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjEzOTV8MHwxfHNlYXJjaHwxMHx8bWFwfGVufDB8fHx8MTc1OTkxNzMxOXww&ixlib=rb-4.1.0&q=80&w=400" },
-  { name: "Emergency", place: "Immediate Assistance", rating: 4.6, reviews: 182, link: "https://images.unsplash.com/photo-1531132089310-f0e1e64bf85d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjEzOTV8MHwxfHNlYXJjaHwxfHxhbmltYWwlMjBFbWVyZ2VuY3l8ZW58MHx8fHwxNzU5OTE3NjExfDA&ixlib=rb-4.1.0&q=80&w=400" }
-];
+  const trendingFeatures = [
+    { name: "Community", place: "Connect & Educate", rating: 4.8, reviews: 128, link: "https://images.unsplash.com/photo-1557856414-069ce8796ec9?q=80&w=1074&auto=format&fit=crop" },
+    { name: "Adopt", place: "Find Loving Homes", rating: 4.7, reviews: 96, link: "https://images.unsplash.com/photo-1700406904426-b4e4ac5f0bb0?q=80&w=687&auto=format&fit=crop" },
+    { name: "Map", place: "Locate Rescue Zones", rating: 4.9, reviews: 215, link: "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg" },
+    { name: "Emergency", place: "Immediate Assistance", rating: 4.6, reviews: 182, link: "https://images.unsplash.com/photo-1531132089310-f0e1e64bf85d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg" }
+  ];
+
   return (
     <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,18 +51,21 @@ const trendingFeatures = [
           <h2 className="text-base font-semibold text-gray-500 tracking-wide uppercase mb-2">
             Features
           </h2>
-          <p className="text-3xl font-bold text-grey-900">
+          <p className="text-3xl font-bold text-gray-900">
             What's the main features we offer
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {trendingFeatures.map((dish, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
             >
-              {/* Dish Image */}
               <img
                 src={dish.link}
                 alt={dish.name}
@@ -70,7 +76,6 @@ const trendingFeatures = [
                 }}
               />
 
-              {/* Bottom Overlay Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4">
                 <h3 className="text-white text-lg font-bold truncate">{dish.name}</h3>
                 <p className="text-white/80 text-sm flex items-center truncate">
@@ -79,7 +84,6 @@ const trendingFeatures = [
                 </p>
 
                 <div className="mt-2 flex items-center justify-between">
-                  {/* Rating */}
                   <div className="flex items-center">
                     <div className="flex text-amber-400">
                       {[...Array(5)].map((_, i) => (
@@ -100,7 +104,7 @@ const trendingFeatures = [
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -39,11 +39,11 @@ const Nav = () => {
           >
             Emergency
           </Link>
-          <Link to="/login" className="hover:text-yellow-400">
+          <Link to="/register" className="hover:text-yellow-400">
             Login
           </Link>
           <button className={`border px-4 py-1 rounded-full ${scroll ? "hover:bg-yellow-500 hover:text-white border-black" : "hover:bg-white hover:text-black border-white"} transition `}>
-            Sign up
+            <Link to="/register">Sign up</Link>
           </button>
         </div>
 
