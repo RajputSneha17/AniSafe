@@ -8,7 +8,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-80 h-[100vh] bg-white border border-yellow-300 rounded-2xl shadow-md p-6 m-6 flex flex-col items-center space-y-6">
+    <div className="w-full md:w-80 h-auto md:h-[100vh] bg-white border border-yellow-300 rounded-2xl shadow-md p-6 md:m-6 flex flex-col items-center space-y-6">
       {/* Title */}
       <h2 className="text-2xl font-bold text-yellow-500 text-center">
         Rescue Map 🗺️

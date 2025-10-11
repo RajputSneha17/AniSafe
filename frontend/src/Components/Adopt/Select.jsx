@@ -1,33 +1,40 @@
 import { IoIosArrowDropdown } from "react-icons/io";
+
 const Select = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col items-center justify-center text-center mt-20 mb-10 ">
-        <h1 className="font-bold text-4xl ">Find Your Friend</h1>
+      <div className="flex flex-col items-center justify-center text-center mt-20 mb-10 px-4">
+        <h1 className="font-bold text-4xl">Find Your Friend</h1>
         <p className="text-lg text-gray-700 pt-2">
           You can find them by your current location, city, country, or state.
         </p>
       </div>
-      <div className="flex row w-[80%] mx-auto justify-between m-4 items-center">
-        <div className="col-6">
+
+      <div className="flex flex-col md:flex-row w-[90%] md:w-[80%] mx-auto justify-between items-center gap-4">
+        {/* Left Section */}
+        <div className="flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-2 items-center">
           <input
-            className="border px-6 py-3 rounded-full border-yellow-500"
+            className="border px-6 py-3 rounded-full border-yellow-500 w-full md:w-auto"
             type="text"
             placeholder="Search By Animal Name"
           />
-          <button className="bg-yellow-400 m-1 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
+          <button className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
             Search
           </button>
         </div>
-        <div className="col">
-          <button className="bg-yellow-400 cursor-pointer m-1 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
+
+        {/* Right Section */}
+        <div className="flex flex-col md:flex-row gap-2 md:gap-2 w-full md:w-auto items-center">
+          <button className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
             Current Location
           </button>
-          <div className="relative inline-block">
+
+          {/* State Select */}
+          <div className="relative inline-block w-full md:w-auto">
             <select
               name="state"
               id="state"
-              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none"
+              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none w-full md:w-auto"
             >
               <option value="Rajasthan">Rajasthan</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
@@ -39,14 +46,15 @@ const Select = () => {
             </select>
             <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
               <IoIosArrowDropdown />
-
             </span>
           </div>
-          <div className="relative inline-block">
+
+          {/* City Select */}
+          <div className="relative inline-block w-full md:w-auto">
             <select
               name="city"
               id="city"
-              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none"
+              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none w-full md:w-auto"
             >
               <option value="Dholpur">Dholpur</option>
               <option value="Agra">Agra</option>
@@ -58,14 +66,15 @@ const Select = () => {
             </select>
             <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
               <IoIosArrowDropdown />
-
             </span>
           </div>
-          <div className="relative inline-block">
+
+          {/* Country Select */}
+          <div className="relative inline-block w-full md:w-auto">
             <select
               name="country"
               id="country"
-              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none"
+              className="border px-6 py-3 rounded-full border-yellow-500 pr-10 appearance-none w-full md:w-auto"
             >
               <option value="India">India</option>
               <option value="USA">USA</option>
