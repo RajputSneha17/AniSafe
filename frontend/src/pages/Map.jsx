@@ -7,7 +7,7 @@ const Map = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-between w-[90%] mx-auto mt-6 h-[100vh]">
+      <div className="flex justify-between w-[90%] mx-auto mt-6 mb-15 h-[100vh]">
           <Sidebar />
           <RightMap />
       </div>
