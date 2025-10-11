@@ -6,7 +6,7 @@ const Nav = () => {
 
   useEffect(() => {
     const scrollHandler = () => {
-      if(window.scrollY > 300) {
+      if(window.scrollY > 50) {
         setSCroll(true);
       }else{
         setSCroll(false);

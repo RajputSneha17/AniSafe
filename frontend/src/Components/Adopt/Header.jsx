@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { FaHeart, FaHandPaper, FaPaw, FaRegHandPeace } from "react-icons/fa";
 const Header = () => {
   const [index, setIndex] = useState(0);
 
-  const lines = [
-    { id: 1, text: "Friends are made, not bought" },
-    { id: 2, text: "Adopt, don't shop!" },
-    { id: 3, text: "Give a pet a second chance" },
-    { id: 4, text: "Save a life, adopt a pet" },
-    { id: 5, text: "Unconditional love is just an adoption away" },
-    { id: 6, text: "Adopt love, adopt a pet" },
+   const lines = [
+    { id: 1, text: "Friends are made, not bought", icon: <FaHeart className="inline text-red-500 ml-2" /> },
+    { id: 2, text: "Adopt, don't shop!", icon: <FaHandPaper className="inline text-yellow-400 ml-2" /> },
+    { id: 3, text: "Save a life, adopt a pet", icon: <FaPaw className="inline text-green-400 ml-2" /> },
+    { id: 4, text: "I'm alone, I need you!", icon: <FaRegHandPeace className="inline text-blue-400 ml-2" /> },
+    { id: 5, text: "Adopt love, adopt a pet", icon: <FaHeart className="inline text-pink-500 ml-2" /> },
   ];
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const Header = () => {
           transition={{ duration: 1 }}
           className="text-white font-bold text-4xl md:text-6xl text-center px-4"
         >
-          {lines[index].text}
+          {lines[index].text}{lines[index].icon} 
         </motion.h1>
       </AnimatePresence>
     </div>
