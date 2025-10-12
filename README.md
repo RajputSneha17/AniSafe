@@ -4,10 +4,10 @@
 https://ani-safe-steel.vercel.app/
 
 ### ▶️ Demo Video  
-https://www.youtube.com/watch?v=<your-video-id>
+https://youtu.be/E8YLZGZTuzc
 
 ### 🛠️ Built With  
-React, Tailwind CSS, Zennit UI, and Framer Motion
+React, Tailwind CSS, Zennit UI, React-toastify, and Framer Motion
 
 ### 💡 Why PetConnect is Important  
 Animal shelters often struggle with space and limited resources. Many rescued animals wait for homes, and people are unaware of how they can help. **PetConnect** bridges this gap by connecting users, shelters, and rescuers. It encourages adoption, spreads awareness through real stories, and enables emergency help with just one click.
