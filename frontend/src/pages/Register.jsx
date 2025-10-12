@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(false);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    toast("Login feature is not implemented yet!");
+    navigate("/makeprofile");
   };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    toast("Signup feature is not implemented yet!");
+    navigate("/makeprofile");
   };
 
   return (
     <div className="min-h-screen w-full flex justify-center items-center bg-gradient-to-br from-yellow-300 to-yellow-500 font-sans px-4 py-10">
-      <ToastContainer/>
       <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         
         {/* Left Panel - Forms */}
