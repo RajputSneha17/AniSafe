@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPlus, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 const members = [
   { name: "Sneha", photo: "https://randomuser.me/api/portraits/women/11.jpg" },
@@ -36,8 +37,11 @@ const Member = () => {
     currentIndex + membersPerPage
   );
 
+  const notify = () => toast("Sorry, this feature is not implemented yet!");
+
   return (
     <div className="w-full py-20 bg-gray-50 flex flex-col items-center">
+      <ToastContainer />
       <h2 className="text-4xl font-bold mb-16 text-center">
         Our Community Members
       </h2>
@@ -58,14 +62,13 @@ const Member = () => {
           {/* Add Member Button */}
           <motion.div
             className="flex flex-col items-center flex-shrink-0 cursor-pointer"
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.2 }} onClick={notify}
           >
             <div className="w-28 h-28 rounded-full bg-yellow-400 flex items-center justify-center text-3xl text-white shadow-lg border-4 border-yellow-500">
               <FaPlus />
             </div>
             <span className="mt-3 text-lg font-medium">Add</span>
           </motion.div>
-
           {visibleMembers.map((member, idx) => (
             <motion.div
               key={idx}

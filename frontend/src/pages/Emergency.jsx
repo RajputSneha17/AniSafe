@@ -1,8 +1,11 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Emergency = () => {
+  const notify = () => toast("Emergency feature is not implemented yet!");
   return (
     <div className="h-screen w-full bg-gradient-to-b from-red-700 to-red-900 flex flex-col justify-center items-center text-center text-white px-4">
+      <ToastContainer />
       <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/20">
         <h1 className="text-4xl font-bold mb-6 uppercase tracking-wide">
           🚨 Emergency Alert
@@ -14,7 +17,7 @@ const Emergency = () => {
           rescue centers.
         </p>
 
-        <button className="bg-white text-red-700 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition-all duration-200">
+        <button onClick={notify} className="bg-white text-red-700 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition-all duration-200">
           Send Alert Now
         </button>
 

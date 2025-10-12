@@ -1,6 +1,6 @@
 import { IoIosArrowDropdown } from "react-icons/io";
 
-const Select = () => {
+const Select = ({notify}) => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center justify-center text-center mt-20 mb-10 px-4">
@@ -18,14 +18,14 @@ const Select = () => {
             type="text"
             placeholder="Search By Animal Name"
           />
-          <button className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
+          <button onClick={notify} className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
             Search
           </button>
         </div>
 
         {/* Right Section */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-2 w-full md:w-auto items-center">
-          <button className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
+          <button onClick={notify} className="bg-yellow-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition w-full md:w-auto">
             Current Location
           </button>
 

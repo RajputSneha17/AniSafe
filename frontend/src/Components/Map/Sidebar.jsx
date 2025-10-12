@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ notify }) => {
   const emergencyContacts = [
     { name: "Police", number: "100" },
     { name: "Ambulance", number: "102" },
@@ -15,7 +15,10 @@ const Sidebar = () => {
       </h2>
 
       {/* Live Location */}
-      <button className="bg-yellow-400 w-full text-black py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
+      <button
+        onClick={notify}
+        className="bg-yellow-400 w-full text-black py-3 rounded-full font-semibold hover:bg-yellow-500 transition"
+      >
         Live Location
       </button>
 
@@ -28,6 +31,7 @@ const Sidebar = () => {
         />
         <button
           type="submit"
+          onClick={notify}
           className="bg-yellow-400 text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition"
         >
           Search
@@ -36,10 +40,16 @@ const Sidebar = () => {
 
       {/* Buttons */}
       <div className="w-full flex flex-col space-y-3">
-        <button className="bg-yellow-400 w-full text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        <button
+          onClick={notify}
+          className="bg-yellow-400 w-full text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition"
+        >
           Hospitals
         </button>
-        <button className="bg-yellow-400 w-full text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        <button
+          onClick={notify}
+          className="bg-yellow-400 w-full text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition"
+        >
           Police Stations
         </button>
       </div>
@@ -58,9 +68,12 @@ const Sidebar = () => {
               <span className="font-semibold text-gray-700">
                 {contact.name}: {contact.number}
               </span>
-              <button className="bg-red-600 text-white px-4 py-1 rounded-full hover:bg-red-700 transition">
+              <a
+                href={`tel:${contact.number}`}
+                className="bg-red-600 text-white px-4 py-1 rounded-full hover:bg-red-700 transition"
+              >
                 Call
-              </button>
+              </a>
             </li>
           ))}
         </ul>

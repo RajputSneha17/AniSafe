@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cards = () => {
+const Cards = ({notify}) => {
   const pets = [
     {
       name: 'Buddy',
@@ -106,7 +106,7 @@ const Cards = () => {
             <p className="text-gray-600 text-sm">Gender: {pet.gender}</p>
             <p className="text-gray-600 text-sm">Location: {pet.location}</p>
           </div>
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 m-4 rounded-full transition">
+          <button onClick={notify} className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 m-4 rounded-full transition">
             Adopt
           </button>
         </div>

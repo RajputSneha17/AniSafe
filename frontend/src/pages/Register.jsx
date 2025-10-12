@@ -1,10 +1,22 @@
 import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
   const [isSignup, setIsSignup] = useState(false);
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    toast("Login feature is not implemented yet!");
+  };
+
+  const handleSignupSubmit = (e) => {
+    e.preventDefault();
+    toast("Signup feature is not implemented yet!");
+  };
+
   return (
     <div className="min-h-screen w-full flex justify-center items-center bg-gradient-to-br from-yellow-300 to-yellow-500 font-sans px-4 py-10">
+      <ToastContainer/>
       <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         
         {/* Left Panel - Forms */}
@@ -35,57 +47,74 @@ const Register = () => {
           </div>
 
           {/* Login Form */}
-          <div
+          <form
+            onSubmit={handleLoginSubmit}
             className={`w-full flex flex-col justify-center items-center transition-all duration-700
               ${isSignup ? "hidden md:flex absolute inset-0 opacity-0 translate-x-10 pointer-events-none" : "flex"}
             `}
           >
-            <h2 className="text-3xl font-bold mb-8 text-yellow-600 text-center">Login</h2>
+            <h2 className="text-3xl font-bold mb-8 text-yellow-600 text-center">
+              Login
+            </h2>
             <input
               type="email"
               placeholder="Email"
+              required
               className="mb-6 w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <input
               type="password"
               placeholder="Password"
+              required
               className="mb-8 w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
-            <button className="bg-yellow-500 text-white w-full py-3 rounded-full font-semibold hover:bg-yellow-600 active:scale-95 transition">
+            <button
+              type="submit"
+              className="bg-yellow-500 text-white w-full py-3 rounded-full font-semibold hover:bg-yellow-600 active:scale-95 transition"
+            >
               Login
             </button>
-          </div>
+          </form>
 
           {/* Sign Up Form */}
-          <div
+          <form
+            onSubmit={handleSignupSubmit}
             className={`w-full flex flex-col justify-center items-center transition-all duration-700
               ${!isSignup ? "hidden md:flex absolute inset-0 opacity-0 -translate-x-10 pointer-events-none" : "flex"}
             `}
           >
-            <h2 className="text-3xl font-bold mb-8 text-yellow-600 text-center">Sign Up</h2>
+            <h2 className="text-3xl font-bold mb-8 text-yellow-600 text-center">
+              Sign Up
+            </h2>
             <input
               type="text"
               placeholder="Full Name"
+              required
               className="mb-6 w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <input
               type="email"
               placeholder="Email"
+              required
               className="mb-6 w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <input
               type="password"
               placeholder="Password"
+              required
               className="mb-8 w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
-            <button className="bg-yellow-500 text-white w-full py-3 rounded-full font-semibold hover:bg-yellow-600 active:scale-95 transition">
+            <button
+              type="submit"
+              className="bg-yellow-500 text-white w-full py-3 rounded-full font-semibold hover:bg-yellow-600 active:scale-95 transition"
+            >
               Sign Up
             </button>
-          </div>
+          </form>
 
         </div>
 
-        {/* Right Panel - Overlay / Animation */}
+        {/* Right Panel */}
         <div className="w-full md:w-1/2 bg-yellow-500 text-white p-8 flex flex-col justify-center items-center h-auto md:h-[500px] mt-8 md:mt-0 hidden md:flex">
           {!isSignup ? (
             <>
@@ -115,7 +144,6 @@ const Register = () => {
             </>
           )}
         </div>
-
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { FaHeart, FaComment, FaBookmark } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 const posts = [
   {
@@ -81,8 +82,12 @@ const Post = () => {
     window.addEventListener("click", enableAudio, { once: true });
   }, []);
 
+    const notify = () => toast("Sorry, this feature is not implemented yet!");
+  
+
   return (
     <div className="min-h-screen bg-gray-100 py-10 flex flex-col items-center">
+      <ToastContainer />
       {posts.map((post, index) => (
         <div
           key={post.id}
@@ -132,14 +137,14 @@ const Post = () => {
           {/* --- Buttons --- */}
           <div className="flex items-center justify-between px-5 py-3 border-t border-gray-200">
             <div className="flex items-center gap-6 text-gray-700 text-xl">
-              <button className="hover:text-red-500 transition">
+              <button onClick={notify} className="hover:text-red-500 transition">
                 <FaHeart />
               </button>
-              <button className="hover:text-blue-500 transition">
+              <button onClick={notify} className="hover:text-blue-500 transition">
                 <FaComment />
               </button>
             </div>
-            <button className="text-xl text-gray-700 hover:text-yellow-500 transition">
+            <button onClick={notify} className="text-xl text-gray-700 hover:text-yellow-500 transition">
               <FaBookmark />
             </button>
           </div>
